@@ -44,6 +44,8 @@ jobs:
       run: chmod +x Generate_PDF/Linux/GeneratePDF
     - name: CD Linux
       run: cd Generate_PDF/Linux
+    - name: Test
+      run: ls -la
     - name: Run GeneratePDF
       run: ./GeneratePDF
 
