@@ -53,9 +53,9 @@ jobs:
     - name: Test
       run: ls -la Generate_PDF/Output
     - uses: actions/upload-artifact@v3
-#      with:
-#        name: Output
-#        path: Generate_PDF/Output
+      with:
+        name: Output
+        path: Generate_PDF/Output
 
 
 
