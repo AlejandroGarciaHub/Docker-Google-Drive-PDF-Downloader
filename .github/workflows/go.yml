@@ -9,8 +9,11 @@ on:
 #  pull_request:
 #    branches: [ "master" ]
 
-jobs:
+env:
+  DATA_SHARETOKEN: ${{secrets.DATA_SHARETOKEN}}
+  DATA_FILENAME: ${{secrets.DATA_FILENAME}}
 
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
@@ -24,11 +27,11 @@ jobs:
     - name: Test
       run: ls -la
     - name: Download Data
-      run: curl -u ${{DATA_SHARETOKEN}}:${{DATA_SHARETOKEN}} -H X-Requested-With:XMLHttpRequest https://cloud.alejandrohub.dev/public.php/webdav/ --output ${{DATA_FILENAME}}.zip
+      run: curl -u $DATA_SHARETOKEN:$DATA_SHARETOKEN -H X-Requested-With:XMLHttpRequest https://cloud.alejandrohub.dev/public.php/webdav/ --output $DATA_FILENAME.zip
     - name: Test
       run: ls -la
     - name: Unzip
-      run: unzip ${{DATA_FILENAME}}.zip -d ${{DATA_FILENAME}}
+      run: unzip $DATA_FILENAME.zip -d $DATA_FILENAME
     - name: Test
       run: ls -la
 
