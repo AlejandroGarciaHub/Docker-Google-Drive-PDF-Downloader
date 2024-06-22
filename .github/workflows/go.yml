@@ -40,6 +40,10 @@ jobs:
       run: cp $DATA_FILENAME/$DATA_FILENAME Generate_PDF/Input/$DATA_FILENAME
     - name: Test
       run: ls -la Generate_PDF/Input/
+    - name: Chmod +x GeneratePDF
+      run: chmod +x Generate_PDF/Linux/Generate_PDF
+    - name: Run GeneratePDF
+      run: ./Generate_PDF/Linux/Generate_PDF
 
 
 
