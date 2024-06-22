@@ -21,9 +21,18 @@ jobs:
       with:
         go-version: '1.20'
 
-    - name: Build
-#      run: go build -v ./...
+    - name: Test
       run: ls -la
+    - name: Download Data
+      run: curl -u ${DATA_SHARETOKEN}:${DATA_SHARETOKEN} -H X-Requested-With:XMLHttpRequest https://cloud.alejandrohub.dev/public.php/webdav/ --output ${DATA_FILENAME}.zip
+    - name: Test
+      run: ls -la
+    - name: Unzip
+      run: unzip ${DATA_FILENAME}.zip -d ${DATA_FILENAME}
+    - name: Test
+      run: ls -la
+
+
 
 #    - name: Test
 #      run: go test -v ./...
