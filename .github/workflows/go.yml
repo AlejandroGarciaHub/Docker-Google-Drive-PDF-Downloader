@@ -47,7 +47,7 @@ jobs:
     - name: Test
       run: ls -la
     - name: cd Generate_PDF/Linux && Run GeneratePDF
-      run: ./GeneratePDF
+      run: cd Generate_PDF/Linux && ./GeneratePDF
 
 
 
