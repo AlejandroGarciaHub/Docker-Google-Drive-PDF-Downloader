@@ -48,6 +48,14 @@ jobs:
       run: ls -la
     - name: cd Generate_PDF/Linux && Run GeneratePDF
       run: cd Generate_PDF/Linux && ./GeneratePDF
+    - name: Test
+      run: ls -la Generate_PDF/
+    - name: Test
+      run: ls -la Generate_PDF/Output
+    - uses: actions/upload-artifact@v3
+#      with:
+#        name: Output
+#        path: Generate_PDF/Output
 
 
 
