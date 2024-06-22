@@ -24,8 +24,8 @@ jobs:
       with:
         go-version: '1.20'
 
-    - name: Test
-      run: ls -la
+    - name: Install libfuse2
+      run: sudo apt-get install -y libfuse2
     - name: Download Data
       run: curl -u $DATA_SHARETOKEN:$DATA_SHARETOKEN -H X-Requested-With:XMLHttpRequest https://cloud.alejandrohub.dev/public.php/webdav/ --output $DATA_FILENAME.zip
     - name: Test
